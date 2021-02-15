@@ -1,0 +1,50 @@
+<p>add-country works!</p>
+<div>
+    <form> 
+  <!-- <form action="/action_page.php">
+    <form [formGroup]="options">  -->
+  
+   <mat-form-field appearance="fill">
+        <mat-label>Country Name :</mat-label>
+        <input matInput required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Continent :</mat-label>
+        <mat-select>
+          <mat-option value="Asia">Asia</mat-option>
+          <mat-option value="Antarctica">Antarctica</mat-option>
+          <mat-option value="Africa">Africa</mat-option>
+          <mat-option value="Oceania">Oceania</mat-option>
+          <mat-option value="Europe">Europe</mat-option>
+          <mat-option value="North America">North America</mat-option>
+          <mat-option value="South America">South America</mat-option>
+        </mat-select>
+        <input matInput required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Capital :</mat-label>
+        <input matInput required>
+      </mat-form-field>
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Currency :</mat-label>
+        <input matInput required>
+      </mat-form-field>
+      <br>
+      <div>
+        <label>Island: </label>
+        <mat-radio-group>
+          <mat-radio-button value="true">Island</mat-radio-button>
+          <mat-radio-button value="false">Not Island</mat-radio-button>
+          <input matInput required>
+        </mat-radio-group>
+      </div>
+  
+  <div class="row">
+  <input type="submit" value="Submit">
+  </div>
+  </form>
+  </div>
+  

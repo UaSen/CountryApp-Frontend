@@ -25,6 +25,6 @@ export class CountryServiceService {
   }
 
   public deleteCountry(countryId: number):Observable<void> {
-    return this.http.delete<void>('http://localhost:8080/rest/v2/delete/${countryId}');
+    return this.http.delete<void>('http://localhost:8080/rest/v2/delete/'+countryId);
   }
 }
