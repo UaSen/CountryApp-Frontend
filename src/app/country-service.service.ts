@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Country } from './country';
 
@@ -9,6 +9,11 @@ import { Country } from './country';
 })
 export class CountryServiceService {
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json'
+    })
+  };
 
   constructor(private http:HttpClient) {}
 
@@ -17,11 +22,12 @@ export class CountryServiceService {
   }
 
   public addCountry(country: Country):Observable<Country> {
-    return this.http.post<Country>('http://localhost:8080/rest/v2/add', country);
+   return this.http.post<Country>('http://localhost:8080/rest/v2/add',country, this.httpOptions);
   }
 
   public updateCountry(country: Country):Observable<Country> {
-    return this.http.put<Country>('http://localhost:8080/rest/v2/update', country);
+    console.log("update service", country);
+    return this.http.put<any>('http://localhost:8080/rest/v2/update', country, this.httpOptions);
   }
 
   public deleteCountry(countryId: number):Observable<void> {

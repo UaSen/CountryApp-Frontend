@@ -1,9 +1,8 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 import { Country } from './country';
 import { CountryServiceService } from './country-service.service';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @Component({
@@ -11,107 +10,99 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
 
-   public countries: Country[] = [];
-  //  public editCountry: Country;
-  //  public deleteCountry: Country;
+export class AppComponent implements OnInit{
+  form: any;
 
    constructor(private countryService:CountryServiceService) { }
 
-   ngOnInit() {
-     this.getCountries();
-   }
-
-   public getCountries(): void {
-    this.countryService.getCountries().subscribe(
-      (response: Country[]) => {
-        this.countries = response;
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
-   }
-
-
-  // public onAddCountry(addForm: MatFormFieldModule): void {
-  //   document.getElementById('add-employee-form').click();
-  //   this.employeeService.addEmployee(addForm.value).subscribe(
-  //     (response: Country) => {
-  //       console.log(response);
-  //       this.getEmployees();
-  //       addForm.reset();
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //       addForm.reset();
-  //     }
-  //   );
-  // }
-
-  // public onUpdateEmloyee(employee: Employee): void {
-  //   this.employeeService.updateEmployee(employee).subscribe(
-  //     (response: Employee) => {
-  //       console.log(response);
-  //       this.getEmployees();
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   );
-  // }
-
-  // public onDeleteCountry(id: number): void {
-  //   this.countryService.deleteCountry(id).subscribe(
-  //     (response: void) => {
-  //       console.log(response);
-  //       this.getCountries();
-  //     },
-  //     (error: HttpErrorResponse) => {
-  //       alert(error.message);
-  //     }
-  //   );
-  // }
-
-  // public searchEmployees(key: string): void {
-  //   console.log(key);
-  //   const results: Employee[] = [];
-  //   for (const employee of this.employees) {
-  //     if (employee.name.toLowerCase().indexOf(key.toLowerCase()) !== -1
-  //     || employee.email.toLowerCase().indexOf(key.toLowerCase()) !== -1
-  //     || employee.phone.toLowerCase().indexOf(key.toLowerCase()) !== -1
-  //     || employee.jobTitle.toLowerCase().indexOf(key.toLowerCase()) !== -1) {
-  //       results.push(employee);
-  //     }
-  //   }
-  //   this.employees = results;
-  //   if (results.length === 0 || !key) {
-  //     this.getEmployees();
-  //   }
-  // }
-
-  // public onOpenModal(country: Country, mode: string): void {
-  //   const container = document.getElementById('main-container');
-  //   const button = document.createElement('button');
-  //   button.type = 'button';
-  //   button.style.display = 'none';
-  //   button.setAttribute('data-toggle', 'modal');
-  //   if (mode === 'add') {
-  //     button.setAttribute('data-target', '#addEmployeeModal');
-  //   }
-  //   // if (mode === 'edit') {
-  //   //   this.editEmployee = employee;
-  //   //   button.setAttribute('data-target', '#updateEmployeeModal');
-  //   // }
-  //   if (mode === 'delete') {
-  //     this.deleteCountry = country;
-  //     button.setAttribute('data-target', '#deleteCountryModal');
-  //   }
-  //   container.appendChild(button);
-  //   button.click();
-  // }
+   public countries: Country[] = [];
+   public deleteCountry!: Country;
+   public editCountry!: Country;
   
-  }
+  
+    ngOnInit() {
+      this.getCountries();
+    }
+  
+    public getCountries(): void {
+     this.countryService.getCountries().subscribe(
+       (response: Country[]) => {
+         this.countries = response;
+       },
+       (error: HttpErrorResponse) => {
+         alert(error.message);
+       }
+     );
+    }
+
+  
+    // openDialog(id:number,countryName:String){
+     
+    //   var resultRef=this.form.open(DialogExampleComponent,{data:{name:countryName}});
+  
+    //    resultRef.afterClosed().subscribe(result => {
+    //     if(result === "true"){
+    //       this.onDeleteCountry(id);
+    //     }
+    //   });
+      
+     
+    // }
+  
+    // public onDeleteCountry(id: number): void {
+     
+    //   this.countryService.deleteCountry(id).subscribe(
+    //     (response: void) => {
+    //       console.log(response);
+    //       this.getCountries();
+    //     },
+    //     (error: HttpErrorResponse) => {
+    //       alert(error.message);
+    //     }
+    //   );
+    // }
+  
+    // openUpdate(country:any){
+  
+    //   var id = country.id;
+    //   var countryName = country.countryName;
+    //   var continent = country.continent ;
+    //   var capital = country.capital;
+    //   var currency= country.currency;
+    //   var island = country.island;
+    //   var imageUrl = country.imageUrl;
+  
+    //  console.log('country details', country);
+      
+    //  var updateRef = this.form.open(UpdateCountryComponent,{data:{countrys:country}} );
+  
+    //  updateRef.afterClosed().subscribe(result => {
+    //   // if(result === "true"){
+    //   //   this.onDeleteCountry(id);                      {data:{countrys:country}}
+    //   // }
+    //   console.log('cresult details', result);
+    //  // console.log('cresult name', result.countryName);
+    // });
+    // }
+  
+    // public onUpdateCountry(country: Country): void {
+    //   this.countryService.updateCountry(country).subscribe(
+    //     (response: Country) => {
+    //       console.log(response);
+    //       this.getCountries();
+    //     },
+    //     (error: HttpErrorResponse) => {
+    //       alert(error.message);
+    //     }
+    //   );
+    // }
+  
+    // public addCountryComponent!: AddCountryComponent;
+  
+    // openAdd(){
+    //   var resultRef=this.form.open(AddCountryComponent);
+    // }
+ }
 
  
