@@ -3,11 +3,15 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.0.
 
-## Step 1: Dependency Install
+## Step 1: Clone Repository
+
+Switch into the main branch using following command. `git switch main`
+
+## Step 2: Dependency Install
 
 Run `npm install` to install dependecies.
 
-## Step 2: Run Development server
+## Step 3: Run Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
