@@ -1,0 +1,59 @@
+<p>update country details!</p>
+
+<div>
+    <form #updateForm="ngForm" (ngSubmit)="onSubmit(updateForm)">  
+
+      <mat-form-field appearance="fill">
+        <mat-label>Country Name :</mat-label>
+        <input type="text" pattern="[a-zA-Z ]*" matInput minlength = "3" required value=countrys.countryName ngModel name="countryName">
+      </mat-form-field>
+     
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Continent :</mat-label>
+        <mat-select matNativeControl required  ngModel name="continent">
+          <mat-option value="Asia">Asia</mat-option>
+          <mat-option value="Antarctica">Antarctica</mat-option>
+          <mat-option value="Africa">Africa</mat-option>
+          <mat-option value="Oceania">Oceania</mat-option>
+          <mat-option value="Europe">Europe</mat-option>
+          <mat-option value="North America">North America</mat-option>
+          <mat-option value="South America">South America</mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Capital :</mat-label>
+        <input type="text" pattern="[a-zA-Z ]*" matInput minlength = "3" required  ngModel name="capital">
+      </mat-form-field>
+     
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Currency :</mat-label>
+        <input type="text" pattern="[a-zA-Z ]*" matInput minlength = "3" required  ngModel name="currency">
+      </mat-form-field>
+  
+      <br>
+      <mat-label>Island: </mat-label>
+      <mat-radio-group required  ngModel name="island">
+        <mat-radio-button value="true">Island</mat-radio-button>
+        <mat-radio-button value="false">Not Island</mat-radio-button>
+      </mat-radio-group>
+  
+      <br>
+      <mat-form-field appearance="fill">
+        <mat-label>Image Url :</mat-label>
+        <input type="text" matInput maxlength = "2000" required ngModel name="imageUrl">
+      </mat-form-field>
+   
+  
+  <div class="row">
+    <button  type="submit" [disabled]="updateForm.invalid" mat-raised-button  mat-dialog-close>Submit</button>
+  </div>
+  </form>
+  </div> 
+
+
+
+
