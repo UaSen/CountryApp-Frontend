@@ -2,9 +2,6 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {AfterViewInit, ViewChild} from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
-import {MatTableDataSource} from '@angular/material/table';
 import { AddCountryComponent } from '../add-country/add-country.component';
 import { Country } from '../country';
 import { CountryServiceService } from '../country-service.service';
@@ -114,7 +111,7 @@ console.log("update",countrys);
 
 
   displayedColumns: string[] = ['imageUrl', 'countryName', 'continent', 'capital','currency','island','edit','delete'];
-  dataSource = this.countryService.getCountries();//  ELEMENT_DATA;
+  dataSource = this.countryService.getCountries();
   
 
 }

@@ -26,7 +26,6 @@ export class CountryServiceService {
   }
 
   public updateCountry(country: Country):Observable<Country> {
-    console.log("update service", country);
     return this.http.put<any>('http://localhost:8080/rest/v2/update', country, this.httpOptions);
   }
 

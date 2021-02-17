@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import * as module from '@angular/material/dialog';
 import { FormGroup, FormControl, NgForm } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Country } from '../country';
 import { CountryServiceService } from '../country-service.service';
 import { HttpErrorResponse } from '@angular/common/http';
