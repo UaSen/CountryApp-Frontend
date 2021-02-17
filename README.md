@@ -7,11 +7,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Switch into the main branch using following command. `git switch main`
 
-## Step 2: Dependency Install
+## Step 2: Open project in a IDE(VS code)
+
+## Step 3: Dependency Install
 
 Run `npm install` to install dependecies.
 
-## Step 3: Run Development server
+## Step 4: Run Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
