@@ -5,7 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Step 1: Clone Repository
 
-Switch into the main branch using following command. `git switch main`
+Switch into the dev branch using following command. `git switch dev`
 
 ## Step 2: Open project in a IDE(VS code)
 
